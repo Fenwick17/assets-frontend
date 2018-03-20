@@ -16,15 +16,15 @@
 
 var $ = require('jquery')
 
-var nav = $('.account-menu')
-var mainNav = $('.account-menu__main')
-var subNav = $('.subnav')
-var showSubnavLink = $('.account-menu__link--more')
-var showNavLinkMobile = $('.account-menu__link--menu')
-var viewportWidth = $(window).width()
-var backLink = $('.account-menu__link--back a')
-
 module.exports = function () {
+  var nav = $('.account-menu')
+  var mainNav = $('.account-menu__main')
+  var subNav = $('.subnav')
+  var showSubnavLink = $('.account-menu__link--more')
+  var showNavLinkMobile = $('#mobile-menu')
+  // var viewportWidth = $(window).width()
+  var backLink = $('.account-menu__link--back a')
+
   subNav.attr({
     'aria-hidden': 'true',
     'tabindex': -1
@@ -110,7 +110,7 @@ module.exports = function () {
 
     if (isSmall()) {
       nav.addClass('is-smaller')
-      showNavLinkMobile
+      $('#mobile-menu')
         .attr('aria-hidden', 'false')
         .removeClass('js-hidden')
       hideSubnavMobile()
@@ -273,6 +273,6 @@ module.exports = function () {
   }
 
   function isSmall () {
-    return (viewportWidth <= 768)
+    return ($(window).width() <= 768)
   }
 }
