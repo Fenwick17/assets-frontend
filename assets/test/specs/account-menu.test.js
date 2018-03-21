@@ -21,9 +21,9 @@ const navSetup = function () {
 
 describe('Given I have an account menu of the page', function () {
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/components/account-menu'
+    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
     loadFixtures('account-menu.html')
-    accountMenu = require('./account-menu.js')
+    accountMenu = require('../../javascripts/modules/account-menu.js')
     navSetup()
   })
 

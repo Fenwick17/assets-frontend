@@ -106,8 +106,6 @@ module.exports = function () {
   })
 
   $(window).on('load resize', function () {
-    viewportWidth = $(window).width()
-
     if (isSmall()) {
       nav.addClass('is-smaller')
       $('#mobile-menu')
