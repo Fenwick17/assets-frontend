@@ -105,7 +105,8 @@ module.exports = function () {
     }
   })
 
-  $(window).on('load resize', function () {
+  module.export = testScreen = function () {
+    $('#mobile-menu').addClass('test')
     if (isSmall()) {
       nav.addClass('is-smaller')
       $('#mobile-menu')
@@ -123,6 +124,10 @@ module.exports = function () {
         .removeClass('js-hidden')
       subNav.removeClass('js-hidden')
     }
+  }
+
+  $(window).on('load resize', function () {
+    testScreen()
   })
 
   function showMainNavMobile () {

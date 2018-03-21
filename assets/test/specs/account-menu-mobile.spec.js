@@ -9,7 +9,7 @@ require('jquery')
 
 describe('Given I have an account menu of the page', function () {
 
-  var accountMenu, mobileMenu
+  var accountMenu, mobileMenu, screenSizeNav
 
   beforeEach(function () {
     jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
@@ -17,10 +17,12 @@ describe('Given I have an account menu of the page', function () {
     // viewport.set(320, 480)
     accountMenu = require('../../javascripts/modules/account-menu.js')
     accountMenu()
+    testScreen()
     mobileMenu = document.getElementById('mobile-menu')
   })
 
   it('should show the mobile version of the navigation', function () {
     expect(mobileMenu.getAttribute('aria-hidden')).toBe('false')
+    expect(mobileMenu).toHaveClass('test')
   })
 })
