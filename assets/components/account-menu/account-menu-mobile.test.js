@@ -12,10 +12,10 @@ describe('Given I have an account menu of the page', function () {
   var accountMenu, mobileMenu, screenSizeNav
 
   beforeEach(function () {
-    jasmine.getFixtures().fixturesPath = 'base/test/specs/fixtures/'
+    jasmine.getFixtures().fixturesPath = 'base/components/account-menu'
     loadFixtures('account-menu.html')
     // viewport.set(320, 480)
-    accountMenu = require('../../javascripts/modules/account-menu.js')
+    accountMenu = require('./account-menu')
     accountMenu()
     testScreen()
     mobileMenu = document.getElementById('mobile-menu')
